@@ -1,0 +1,142 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+/* Logo styling */
+.logo h2 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #f0e68c;
+  /* Light yellow color */
+  margin-bottom: 20px;
+}
+/* Basic header styling */
+header {
+  display: flex;
+  /* Use flexbox for layout */
+  justify-content: space-between;
+  /* Space out the logo and navigation */
+  align-items: center;
+  /* Center items vertically */
+  padding: 20px 30px;
+  /* Add space around the header */
+  background-color: #0cc0df;
+  /* Dark background for the header */
+  position: relative;
+  /* Ensure the positioning of elements inside header */
+}
+
+/* Styling for the logo image */
+header .logo {
+  height: 150px;
+  /* Set the logo height */
+  width: auto;
+  /* Maintain aspect ratio */
+}
+
+/* Styling for the unordered list (navigation) */
+header ul {
+  list-style-type: none;
+  /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* Display the list items in a row */
+  align-items: center;
+  /* Vertically align items */
+}
+
+/* Styling for each list item */
+header li {
+  margin: 0 15px;
+  /* Space between the navigation items */
+}
+
+/* Styling for the links */
+header a {
+  color: white;
+  /* White text color */
+  text-decoration: none;
+  /* Remove underline */
+  font-size: 18px;
+  /* Adjust font size */
+  font-weight: bold;
+  /* Make the font bold */
+  padding: 5px 10px;
+  /* Add padding around the text */
+  border-radius: 5px;
+  /* Rounded corners */
+  transition: background-color 0.3s;
+  /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the links */
+header a:hover {
+  background-color: #ff914d;
+  /* Change background color on hover */
+}
+
+.footer {
+  background-color: #0cc0df;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Call-to-action button */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: whitesmoke;
+  /* Button color */
+  background-color: #ff914d;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.link {
+  text-decoration: none;
+  color: whitesmoke;
+}
+.cta-button:hover {
+  background-color: #e6d07a;
+  /* Hover color */
+  cursor: pointer;
+}
+/* Full viewport height for hero section */
+.back {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+/* Dark overlay to make text more readable */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark overlay */
+  z-index: 1;
+}
+
+/* Content positioning */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <!-- parss this line to jinja flask -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/public_css.css')}}"
+    />
+    {% block extra_css %}{% endblock %}
+    <link
+      rel="icon"
+      href="{{url_for('static',filename='img/icon.jpg')}}"
+      type="image/jpg"
+    />
+  </head>
+
+  <body>
+    <header>
+      <img
+        src="{{url_for('static',filename='img/SpineWallpaper.png')}}"
+        alt="Logo"
+        class="logo"
+      />
+      <ul>
+        <li>
+          <a href="Home"><b>Home</b></a>
+        </li>
+        <li>
+          <a href="About"><b>About</b></a>
+        </li>
+        <li>
+          <a href="ContactUs"><b>Contact Us</b></a>
+        </li>
+      </ul>
+    </header>
+
+    {% block content %} {% endblock %}
+    <footer class="footer">
+      <p>&copy; 2024 SmartSpineScan - All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

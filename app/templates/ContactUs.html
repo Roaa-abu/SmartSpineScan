@@ -1,0 +1,26 @@
+{%extends "public_template.html"%} {% block title %}Contact US -
+SmartSpineScan{% endblock %} {% block extra_css %}<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='css/ContactUs.css')}}"
+/>
+{% endblock %} {% block content %}
+<div class="back">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="container">
+      <h2>We'd Love to Hear From You!</h2>
+      <p>
+        Whether you have questions about our services, need support, or want to
+        learn more about our mission to improve vertebral fracture diagnosis,
+        we're here to help.
+      </p>
+
+      <h3>you can reach us at:</h3>
+      <p>
+        Email:
+        <a href="mailto:SmartSpineScan@gmail.com">SmartSpineScan@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

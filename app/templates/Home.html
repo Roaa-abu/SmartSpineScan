@@ -1,0 +1,20 @@
+{%extends "public_template.html"%} {% block title %}SmartSpineScan{% endblock %}
+{% block extra_css %}<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='css/Home.css')}}"
+/>{% endblock %} {% block content %}
+<div class="back">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>SmartSpineScan</h1>
+    <p>
+      Welcome to SmartSpineScan, where AI-driven X-ray analysis helps detect
+      vertebral fractures with precision. Our goal is to support healthcare
+      professionals in delivering accurate diagnoses and improving patient care.
+    </p>
+    <button class="cta-button" style="border: none">
+      <a class="link" href="upload" style="border: none"> Get Started</a>
+    </button>
+  </div>
+</div>
+{% endblock %}

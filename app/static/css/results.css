@@ -1,0 +1,26 @@
+/* Show image after processing*/
+.image-preview {
+  width: 60%;
+  max-width: 300px;
+  height: auto;
+  margin: 10px auto 10px auto;
+}
+.split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.split .left,
+.split .right {
+  width: 45%; /* Adjust width as needed */
+  text-align: center; /* Optional for centering the image */
+}
+
+.split img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

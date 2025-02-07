@@ -1,0 +1,111 @@
+{%extends "public_template.html"%} {% block title %}Upload - SmartSpineScan{%
+endblock %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='css/upload.css')}}"
+/>{% endblock %} {% block content %}
+<div class="back">
+  <div class="overlay"></div>
+  <div class="content">
+    <h2>Upload Your X-ray Image</h2>
+    <form
+      id="uploadForm"
+      action="/upload_img"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input type="file" id="file" name="image" accept="image/*" required />
+      <br />
+      <img id="imagePreview" class="image-preview" style="display: none" />
+      <br />
+      <button
+        class="cta-button"
+        type="button"
+        id="uploadButton"
+        style="border: none"
+        onclick="uploadFile()"
+      >
+        Upload Image
+      </button>
+    </form>
+    <!-- Modal Notification -->
+    <div id="modal">
+      <div id="modal-content">
+        <p id="modal-message"></p>
+        <button onclick="redirectToResults()">Go to see the result</button>
+      </div>
+    </div>
+    <div id="modal-error">
+      <div id="modal-error-content">
+        <p id="modal-error-message"></p>
+        <button onclick="redirectToUpload()">Back to upload page</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const imageUpload = document.getElementById("file");
+  const imagePreview = document.getElementById("imagePreview");
+  const uploadButton = document.getElementById("uploadButton");
+
+  // Display preview of the selected image
+  imageUpload.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        imagePreview.src = e.target.result;
+        imagePreview.style.display = "block";
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      imagePreview.src = "";
+      imagePreview.style.display = "none";
+      showerrorModal("Please select a valid image file.");
+    }
+  });
+
+  async function uploadFile() {
+    const fileInput = document.getElementById("file");
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+
+    const response = await fetch("/upload_img", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      showModal(result.message);
+    } else {
+      showerrorModal(result.message); // Display error if the upload fails
+    }
+  }
+
+  function showModal(message) {
+    const modal = document.getElementById("modal");
+    const modalMessage = document.getElementById("modal-message");
+    modalMessage.textContent = message;
+    modal.style.display = "flex"; // Show the modal
+  }
+  function redirectToResults() {
+    window.location.href = "results"; // Redirect to results page
+  }
+
+  function showerrorModal(message) {
+    const modal = document.getElementById("modal-error");
+    const modalMessage = document.getElementById("modal-error-message");
+    modalMessage.textContent = message;
+    modal.style.display = "flex"; // Show the modal
+  }
+  function redirectToUpload() {
+    window.location.href = "upload"; // Redirect to results page
+  }
+</script>
+
+{% endblock %}

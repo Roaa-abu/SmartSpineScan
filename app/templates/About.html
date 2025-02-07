@@ -1,0 +1,79 @@
+{%extends "public_template.html"%} {% block title %}About - SmartSpineScan{%
+endblock %} {% block extra_css %}<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='css/About.css')}}"
+/>{% endblock %} {% block content %}
+<main>
+  <section id="paragraph">
+    <p>
+      Welcome to <strong>SmartSpineScan</strong>, where advanced AI-driven
+      healthcare technology meets medical diagnostics. Our platform is designed
+      to provide precise, accurate, and timely diagnoses for vertebral fractures
+      using state-of-the-art image processing algorithms.
+    </p>
+
+    <h3>Our Mission:</h3>
+    <p>
+      We aim to revolutionize the diagnosis and treatment of spinal injuries
+      through the power of <strong>artificial intelligence (AI)</strong> and
+      medical imaging technology. Our goal is to support healthcare providers by
+      offering a reliable and efficient diagnostic tool, helping improve patient
+      outcomes and quality of life.
+    </p>
+
+    <h3>What We Do:</h3>
+    <p>
+      At the core of our platform is cutting-edge
+      <strong>AI technology</strong>, which can analyze X-ray images to detect
+      vertebral fractures, pinpoint other spinal abnormalities, and assess
+      potential issues that might not be immediately visible to the human eye.
+      By streamlining the diagnostic process, we help healthcare professionals
+      make informed decisions quickly, allowing for early intervention and
+      better treatment planning.
+    </p>
+
+    <h3>How We Help:</h3>
+    <ul>
+      <li>
+        <strong>Fast and Accurate Diagnosis:</strong> Our AI technology
+        processes X-ray images within minutes, providing detailed, reliable
+        reports for medical professionals.
+      </li>
+      <li>
+        <strong>Improved Patient Care:</strong> By enhancing diagnostic
+        accuracy, our platform helps healthcare providers develop more
+        effective, personalized treatment plans for each patient.
+      </li>
+      <li>
+        <strong>Cost-Efficient:</strong> Our service reduces the need for
+        multiple tests and appointments, leading to faster diagnoses and lower
+        healthcare costs for patients.
+      </li>
+      <li>
+        <strong>Global Reach:</strong> Whether you're a small clinic or a major
+        hospital, our cloud-based platform ensures accessibility anywhere in the
+        world, making expert-level diagnostics available globally.
+      </li>
+    </ul>
+
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li>
+        <strong>Continuous Innovation:</strong> We are constantly improving our
+        AI models to keep pace with medical advancements, ensuring that our
+        system delivers cutting-edge diagnostic capabilities.
+      </li>
+      <li>
+        <strong>Secure and Confidential:</strong> We prioritize the privacy and
+        security of patient data, complying with industry standards to maintain
+        confidentiality.
+      </li>
+      <li>
+        <strong>User-Friendly Interface:</strong> Our platform is designed to be
+        intuitive, allowing healthcare professionals to upload X-ray images,
+        receive diagnoses, and access recommendations with ease.
+      </li>
+    </ul>
+  </section>
+</main>
+{% endblock %}

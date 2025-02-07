@@ -1,0 +1,17 @@
+/* Main heading */
+.content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: #0cc0df;
+  font: bold "Arial", sans-serif;
+}
+
+/* Subheading text */
+.content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #0cc0df;
+}

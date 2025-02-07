@@ -1,0 +1,42 @@
+{%extends "public_template.html"%} {% block title %}SmartSpineScan Results{%
+endblock %} {% block extra_css %}<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='css/results.css')}}"
+/>
+{% endblock %} {% block content %}
+<div class="back">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>Uploaded Image processing results:</h1>
+
+    <div class="split">
+      <div class="left">
+        <h5>Vertebrea Locations Prediction</h5>
+        <br />
+        <img
+          src="{{ url_for('static', filename=prediction_path+'/'+image_name) }}"
+          alt="Uploaded Image"
+          class="image-preview"
+          id="image-preview"
+        />
+      </div>
+      <div class="right">
+        <h5>Fracture Prediction</h5>
+        <br />
+        <img
+          src="{{ url_for('static', filename=prediction_path2+'/'+image_name) }}"
+          alt="Uploaded Image"
+          class="image-preview"
+          id="image-preview"
+        />
+      </div>
+    </div>
+    <br />
+    <button class="cta-button" style="border: none">
+      <a class="link" href="{{ url_for('upload') }}" style="border: none"
+        >Upload Another Image</a
+      >
+    </button>
+  </div>
+</div>
+{% endblock %}
